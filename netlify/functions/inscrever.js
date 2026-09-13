@@ -25,7 +25,7 @@ export async function handler(event) {
 
   const result = await requestSubscription(email);
   if (result.already) {
-    return wantsJson ? json("ok", { already: true }) : redirect("/?newsletter=ok#newsletter");
+    return wantsJson ? json("already") : redirect("/?newsletter=already#newsletter");
   }
 
   try {
