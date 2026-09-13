@@ -1,4 +1,3 @@
----
 // ============================================================
 // BLOCO DE NEWSLETTER — ativo e conectado ao sistema próprio
 // (Netlify Function /inscrever → Blobs → Resend)
@@ -16,6 +15,7 @@ const formEmbedHtml = `
 </div>
 <p class="nl-error display-none" id="nl-error"><span id="nl-error-msg">Ops — este e-mail não parece válido. Tente novamente, por favor.</span></p>
 <p class="nl-privacy" id="nl-privacy">Sem spam. Você pode cancelar com 1 clique, a qualquer momento.</p>
+<p class="nl-age">Newsletter destinada exclusivamente a maiores de 18 anos.</p>
 `;
 ---
 {
@@ -70,6 +70,9 @@ const formEmbedHtml = `
   }
   .newsletter-form :global(.nl-privacy) {
     @apply mt-3 text-xs opacity-60;
+  }
+  .newsletter-form :global(.nl-age) {
+    @apply mt-1 text-xs opacity-60;
   }
   .newsletter-form :global(.nl-success) {
     @apply mx-auto mt-6 max-w-md rounded-xl border border-skin-accent bg-skin-fill p-4;
