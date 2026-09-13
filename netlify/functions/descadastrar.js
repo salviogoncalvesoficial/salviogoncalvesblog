@@ -1,4 +1,12 @@
+import crypto from "node:crypto";
 import { getSubscribersStore, emailFromToken, emailTemplate, SITE_URL, initBlobs } from "./lib/newsletter.js";
+
+const AUDIT_RETENTION_YEARS = 5;
+
+function auditIdentifier(email) {
+  const secret = process.env.ADMIN_PASSWORD || process.env.RESEND_API_KEY || "newsletter-audit-secret";
+  return crypto.createHmac("sha256", secret).update(email.toLowerCase().trim()).digest("hex");
+}
 
 /**
  * GET/POST /descadastrar?token=...
@@ -18,6 +26,17 @@ export async function handler(event) {
     const key = email.toLowerCase().trim();
     const existing = await store.get(key, { type: "json" }).catch(() => null);
     if (existing) {
+      const auditStore = getStore("newsletter-audit");
+      const now = new Date();
+      const expiresAt = new Date(now);
+      expiresAt.setFullYear(expiresAt.getFullYear() + AUDIT_RETENTION_YEARS);
+      const auditId = `unsubscribe-${auditIdentifier(key)}`;
+      await auditStore.setJSON(auditId, {
+        event: "unsubscribe",
+        identifier: auditIdentifier(key),
+        occurredAt: now.toISOString(),
+        expiresAt: expiresAt.toISOString(),
+      });
       await store.delete(key);
       ok = true;
     }
