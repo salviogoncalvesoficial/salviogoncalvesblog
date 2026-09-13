@@ -14,6 +14,5 @@ export const LOGO_IMAGE = { enable: true, svg: false, width: 300, height: 105 };
 export const SOCIALS: SocialObjects = [
   { name: "Instagram", href: "https://instagram.com/salviogoncalvesoficial", linkTitle: "Salvio Gonçalves no Instagram", active: true },
   { name: "Mail", href: "mailto:contato@salviogoncalves.com.br", linkTitle: "Enviar e-mail para Salvio Gonçalves", active: true },
-  { name: "WhatsApp", href: "https://wa.me/55SEUNUMERO", linkTitle: "Salvio Gonçalves no WhatsApp", active: false },
 ];
 // Blog pronto para receber os novos artigos do projeto.
