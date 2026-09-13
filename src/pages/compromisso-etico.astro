@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { SITE } from "@config";
+---
+<Layout title={`Compromisso ético | ${SITE.title}`} description="Compromisso ético sobre conteúdos de terapias integrativas, desenvolvimento pessoal e saúde emocional.">
+  <Header />
+  <main id="ethical-page">
+    <article class="ethical-content">
+      <p class="eyebrow">Compromisso ético</p>
+      <h1>Informação, acolhimento e responsabilidade</h1>
+      <p class="lead">Este espaço foi criado para compartilhar reflexões e conhecimentos sobre desenvolvimento pessoal, procrastinação, autoconhecimento e terapias integrativas com respeito, clareza e responsabilidade.</p>
+      <h2>Conteúdo informativo e educacional</h2>
+      <p>Os artigos publicados têm caráter informativo, reflexivo e educacional. Eles não constituem diagnóstico médico, consulta psicológica, prescrição psiquiátrica ou tratamento de uma condição de saúde.</p>
+      <p>As experiências e reflexões apresentadas podem ser significativas para algumas pessoas, mas não produzem necessariamente os mesmos efeitos para todas. Não prometo cura, resultado garantido ou substituição de acompanhamento profissional habilitado.</p>
+      <h2>Terapias integrativas</h2>
+      <p>Compartilho conhecimentos decorrentes dos meus estudos e formações em terapias integrativas e holísticas, incluindo a Hertz Terapia. Essas formações não equivalem a registro profissional em medicina ou psicologia e não autorizam a prática de atos privativos dessas profissões.</p>
+      <p>Quando houver uma condição física ou psicológica, procure avaliação e acompanhamento de profissionais de saúde devidamente habilitados e registrados nos respectivos conselhos profissionais. Não interrompa medicamentos ou tratamentos com base em um artigo deste blog.</p>
+      <h2>Privacidade e dados de saúde</h2>
+      <p>Não envie diagnóstico, histórico clínico, informações de saúde ou detalhes íntimos por formulários gerais, pela newsletter, pelo agendamento ou pelo e-mail de contato sem orientação prévia. O agendamento é destinado exclusivamente a adultos e possui aviso próprio antes do acesso ao serviço externo.</p>
+      <h2>Atendimento</h2>
+      <p>A leitura do blog, a inscrição na newsletter ou o envio de uma mensagem não criam, por si só, uma relação terapêutica. Eventual conversa inicial e qualquer atendimento dependem de disponibilidade, alinhamento e confirmação em canal apropriado.</p>
+      <p>Se você estiver em situação de urgência ou risco, procure imediatamente os serviços de emergência da sua localidade ou um profissional habilitado.</p>
+      <div class="ethical-links"><a href="/contato/agendamento/">Conversa inicial e agendamento</a><a href="/politica-de-privacidade/">Política de Privacidade</a></div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+<style>
+#ethical-page{max-width:52rem;margin:0 auto;padding:4rem 1rem 5rem}.ethical-content{max-width:44rem;margin:0 auto}.eyebrow{display:inline-block;margin:0 0 1rem;border:1px solid rgb(var(--color-line));border-radius:999px;padding:.35rem .8rem;color:rgb(var(--color-accent));font-size:.75rem;text-transform:uppercase;letter-spacing:.16em}.ethical-content h1{margin:0;color:rgb(var(--color-accent));font-size:clamp(2rem,5vw,3.2rem);line-height:1.12}.lead{margin:1.4rem 0 2.5rem;font-size:1.15rem;line-height:1.75}.ethical-content h2{margin:2.2rem 0 .7rem;color:rgb(var(--color-accent));font-size:1.35rem}.ethical-content p{line-height:1.75}.ethical-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}.ethical-links a{border-radius:999px;background:rgb(var(--color-accent));padding:.7rem 1rem;color:rgb(var(--color-inverted));font-size:.9rem;font-weight:600;text-decoration:none}.ethical-links a:hover{opacity:.88}@media(max-width:640px){#ethical-page{padding:2.5rem .75rem 4rem}.ethical-content h1{font-size:2rem}.lead{font-size:1.05rem}}
+</style>
