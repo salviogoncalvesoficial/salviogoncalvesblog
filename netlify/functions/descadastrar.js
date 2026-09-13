@@ -1,8 +1,8 @@
-import { unsubscribe, emailFromToken, emailTemplate, SITE_URL, initBlobs } from "./lib/newsletter.js";
+import { getSubscribersStore, emailFromToken, emailTemplate, SITE_URL, initBlobs } from "./lib/newsletter.js";
 
 /**
  * GET/POST /descadastrar?token=...
- * GET  → confirma e mostra a página estilizada
+ * GET → confirma e mostra a página estilizada
  * POST → descadastro em 1 clique (Gmail, RFC 8058)
  */
 export async function handler(event) {
@@ -14,8 +14,13 @@ export async function handler(event) {
 
   let ok = false;
   if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    const result = await unsubscribe(email);
-    ok = result.ok;
+    const store = getSubscribersStore();
+    const key = email.toLowerCase().trim();
+    const existing = await store.get(key, { type: "json" }).catch(() => null);
+    if (existing) {
+      await store.delete(key);
+      ok = true;
+    }
   }
 
   // No POST (descadastro em 1 clique) a resposta não é exibida a ninguém
@@ -27,7 +32,7 @@ export async function handler(event) {
     title: ok ? "Sua inscrição foi cancelada" : "Link inválido",
     bodyHtml: ok
       ? `
-        <p>Pronto — você não receberá mais e-mails desta newsletter.</p>
+        <p>Pronto — sua inscrição foi cancelada e o registro foi removido da lista.</p>
         <p>Se mudar de ideia, a porta continua aberta: é só se inscrever novamente no blog quando quiser voltar.</p>
         <p style="text-align:center;margin:24px 0;">
           <a href="${SITE_URL}" style="display:inline-block;background:#4e6351;color:#faf7f2;padding:12px 28px;border-radius:9999px;text-decoration:none;font-size:14px;">Voltar ao blog</a>
