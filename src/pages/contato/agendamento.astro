@@ -4,24 +4,24 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE } from "@config";
 ---
-<Layout title={`Agendamento | ${SITE.title}`} description="Escolha um horário para iniciarmos uma conversa com calma e acolhimento.">
+<Layout title={`Contato | ${SITE.title}`} description="Entre em contato para combinarmos uma conversa inicial com calma e acolhimento.">
   <Header />
   <main id="contact-page">
     <section class="contact-intro">
       <p class="eyebrow">Um espaço para você</p>
       <h1>Talvez este seja o momento de olhar para você com mais cuidado.</h1>
-      <p class="lead">Vamos conversar sobre o que você está vivendo e encontrar, com calma, um próximo passo possível. Escolha um horário para iniciarmos essa conversa.</p>
-      <p class="details">A conversa inicial tem duração de 60 minutos e acontece online, pelo Google Meet. Ao escolher um horário, você receberá a confirmação no e-mail informado pelo Google Agenda.</p>
+      <p class="lead">Vamos conversar sobre o que você está vivendo e encontrar, com calma, um próximo passo possível. Entre em contato para combinarmos uma conversa inicial.</p>
+      <p class="details">A conversa inicial acontece online, pelo Google Meet. O horário será combinado diretamente pelo WhatsApp.</p>
     </section>
     <section class="booking-card" aria-labelledby="booking-title">
-      <h2 id="booking-title">Escolha um horário</h2>
-      <p>Encontre um momento que faça sentido para você.</p>
+      <h2 id="booking-title">Vamos conversar</h2>
+      <p>Envie uma mensagem para combinarmos um horário com calma.</p>
       <div class="booking-notice" role="note">
-        <strong>Você será direcionado ao Google Agenda</strong>
-        <span>Para proteger sua privacidade, não informe dados de saúde, detalhes da terapia ou outras informações sensíveis no formulário de agendamento.</span>
-        <span>O Google trata os dados na agenda externa, e Salvio Gonçalves também tratará os dados necessários para organizar a conversa inicial e o atendimento solicitado.</span>
+        <strong>Você será direcionado ao WhatsApp</strong>
+        <span>Este canal serve apenas para o contato inicial e a combinação de horário. Não envie diagnósticos, históricos clínicos, informações sobre medicamentos ou outros dados de saúde por esse canal.</span>
+        <span>O WhatsApp é uma plataforma externa, sujeita aos próprios termos e à política de privacidade da Meta. O atendimento é destinado exclusivamente a maiores de 18 anos.</span>
       </div>
-      <a class="booking-link" href="https://calendar.app.google/dUd6B3ge6TqjwNmf6" target="_blank" rel="noopener noreferrer">Abrir agenda de horários <span aria-hidden="true">↗</span></a>
+      <a class="booking-link" href="https://wa.me/352691536734" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp <span aria-hidden="true">↗</span></a>
     </section>
   </main>
   <Footer />
