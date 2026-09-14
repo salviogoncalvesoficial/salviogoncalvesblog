@@ -2,52 +2,18 @@
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
 const currentYear = new Date().getFullYear();
-export interface Props {
-  noMarginTop?: boolean;
-}
+export interface Props { noMarginTop?: boolean; }
 const { noMarginTop = false } = Astro.props;
 ---
 <footer class={noMarginTop ? "" : "mt-auto"}>
   <Hr noPadding />
   <div class="footer-wrapper">
     <Socials centered />
-    <div class="copyright-wrapper">
-      <span>&#169; {currentYear} Salvio Gonçalves</span>
-      <span class="separator">&nbsp;|&nbsp;</span>
-      <span>Todos os direitos reservados.</span>
-    </div>
+    <div class="footer-links"><a href="/politica-de-privacidade/">Privacidade</a><a href="/politica-de-cookies/">Cookies</a><a href="/termos-de-uso/">Termos de uso</a><a href="/compromisso-etico/">Compromisso ético</a></div>
+    <p class="privacy-line">Seus dados são tratados com privacidade e transparência.</p>
+    <div class="copyright-wrapper"><span>&#169; {currentYear} Sálvio da Silva Gonçalves</span><span class="separator">&nbsp;|&nbsp;</span><span>Todos os direitos reservados.</span></div>
   </div>
 </footer>
 <style>
-  footer {
-    @apply w-full;
-  }
-  .footer-wrapper {
-    @apply mx-auto w-full max-w-5xl px-4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  @media (min-width: 640px) {
-    .footer-wrapper {
-      flex-direction: row-reverse;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-  }
-  .link-button {
-    @apply my-1 p-2 hover:rotate-6;
-  }
-  .link-button svg {
-    @apply scale-125;
-  }
-  .copyright-wrapper {
-    @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
-  }
-  .separator {
-    @apply hidden sm:inline;
-  }
+footer{@apply w-full}.footer-wrapper{@apply mx-auto w-full max-w-5xl px-4;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding-top:1.5rem;padding-bottom:1.5rem}.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin:.75rem 0;font-size:.78rem}.footer-links a,.privacy-line{color:rgb(var(--color-base)/.7)}.footer-links a:hover{color:rgb(var(--color-accent));text-decoration:underline}.privacy-line{margin:0;font-size:.75rem;text-align:center}.copyright-wrapper{@apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row}.separator{@apply hidden sm:inline}@media(min-width:640px){.footer-wrapper{padding-top:1rem;padding-bottom:1rem}}
 </style>
