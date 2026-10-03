@@ -2,14 +2,14 @@
 author: Sálvio Gonçalves
 pubDatetime: 2026-10-03T00:00:00.000Z
 modDatetime: 2026-10-03T00:00:00.000Z
-title: Hábito de leitura: o que muda em você quando lê todos os dias
+title: "Hábito de leitura: o que muda em você quando lê todos os dias"
 ogImage: "/1790980122033-capa-1790980121394.webp"
 featured: true
 draft: false
 tags:
   - Leitura
   - Hábitos
-description: O hábito de leitura transforma comportamento e evolução pessoal. O que muda no cérebro e na vida de quem lê todos os dias — na prática.
+description: "O hábito de leitura transforma comportamento e evolução pessoal. O que muda no cérebro e na vida de quem lê todos os dias — na prática."
 ---
 Terminei há duas semanas um treinamento de leitura muito interessante, e que me trouxe muitos insights a respeito da importância que a leitura tem para o crescimento de uma pessoa, em sua vida, em sua carreira profissional, em quem ela é como ser humano. E mais do que o treinamento em si, o que descobri foi o valor que o hábito de leitura tem, e o privilégio que é ler todos os dias.
 
